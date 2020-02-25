@@ -1,21 +1,25 @@
-import Link from 'next/link';
+import Link from 'next/link'
+import Layout from '../components/layout'
 
 export default function Index() {
     return (
         <div>
-            <Link href="/about">
-                <a>About Page</a>
-
-            </Link>
-            <p>
-                <span>Hello Next.js</span>
-
-            </p>
+            <Layout>
+                <h1>
+                    <span>안녕하세요. next입니다.</span>
+                </h1>
+                <Link href="/more">
+                    <a>더보기</a>
+                </Link>
+            </Layout>
             <style jsx>{`
-                a{
-                    font-size: 2rem;
-                    color: blue;
-                }
+            {
+                text-align:center;
+
+            }
+            a{
+                color: blue;
+            }
             `}</style>
         </div>
     );
