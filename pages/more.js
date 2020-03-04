@@ -1,10 +1,14 @@
 import Link from 'next/link'
+import {useRouter} from 'next/router'
 import Layout from '../components/layout'
 
-export default function Index() {
+export default function More() {
+    const router = useRouter()
+    const qr = router.query
     return (
         <div>
             <Layout>
+                <h2>제목 : {qr.title}</h2>
                 <h2>
                     next로 만든 간단한 라우팅입니다.
                 </h2>
