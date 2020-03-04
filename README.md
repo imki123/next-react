@@ -1,10 +1,11 @@
 # next-react
 React using next.js
 
-## install node in your PC
-https://nodejs.org/
+## Install node.js in your PC
+download and install node.js  
+in https://nodejs.org/  
 
-## install next-react
+## npm install react and next
 ```console
 git clone https://github...  
 cd next-react  
@@ -12,7 +13,7 @@ npm install react react-dom next
 npm run dev  
 ```
 
-## open web
+## Open web
 localhost:3000
 
 

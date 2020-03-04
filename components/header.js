@@ -7,6 +7,7 @@ const Header = () =>{
     return(
         <div>
             <table>
+                <tbody>
                 <tr>
                     <td style={{textAlign:"left"}}>
                         <span onClick={handleBack}>뒤로</span>
@@ -17,6 +18,7 @@ const Header = () =>{
                         </Link>
                     </td>
                 </tr>
+                </tbody>
             </table>
             <style jsx>{`
                 table{
