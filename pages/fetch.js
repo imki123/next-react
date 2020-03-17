@@ -5,20 +5,18 @@ import Layout from '../components/layout'
 import fetch from 'isomorphic-unfetch'
 
 export default function Fetch(props) {
-    let shows = props.shows.map(show => (
-            <li key={show.id}>
-                <Link href={`/p2/[batmans]?title=${show.name}`}
-                    as={`/p2/${show.name}`}>
-                    <a>{show.name}</a>
-                </Link>
-            </li>
-        ))
     return (
         <div>
             <Layout>
                 <h1>Batman TV Shows</h1>
                 <ol>
-                    {shows}
+                    {props.shows.map(show =>
+                        <li key={show.id}>
+                            <Link href={`/p2/[batmans]?title=${show.name}`}
+                                as={`/p2/${show.name}`}>
+                                <a>{show.name}</a>
+                            </Link>
+                        </li>)}
                 </ol>
             </Layout>
             <style jsx>{`
