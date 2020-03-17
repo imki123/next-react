@@ -5,15 +5,6 @@ import Layout from '../components/layout'
 import fetch from 'isomorphic-unfetch'
 
 export default function Fetch(props) {
-    Fetch.getInitialProps = async function () {
-        const res = await fetch('http://localhost:3000/api/user');
-        const data = await res.json();
-        console.log(`data fetched. ${JSON.stringify(data)}`);
-
-        return {
-            data : data
-        };
-    };
     return (
         <div>
             <Layout>
@@ -27,3 +18,13 @@ export default function Fetch(props) {
         </div>
     );
 }
+
+Fetch.getInitialProps = async function () {
+    const res = await fetch('http://localhost:3000/api/user');
+    const data = await res.json();
+    console.log(`data fetched. ${JSON.stringify(data)}`);
+
+    return {
+        data : data
+    };
+};

@@ -18,6 +18,11 @@ export default function Index() {
                         </Link>
                     </li>
                     <li>
+                        <Link href="/fetch">
+                            <a>fetch : batman</a>
+                        </Link>
+                    </li>
+                    <li>
                         <Link href="/api/user">
                             <a>api/user</a>
                         </Link>
@@ -28,7 +33,7 @@ export default function Index() {
                         </Link>
                     </li>
                     <li>
-                        <DynamicLink id='dynamic-page' />
+                        <DynamicLink id='dynamic-page' title="dynamic-page"/>
                     </li>
                 </ol>
             </Layout>

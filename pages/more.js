@@ -7,6 +7,10 @@ import Layout from '../components/layout'
 export default function More() {
     const router = useRouter()
     const qr = router.query
+    let title
+    if(qr.title === ''){
+        
+    }
     return (
         <div>
             <Layout>
@@ -18,9 +22,6 @@ export default function More() {
                     스타일은 jsx를 이용했어요.
                     컴포넌트별로 적용할 수 있어 편리하네요.
                 </h3>
-                <Link href="/fetch">
-                    <a>fetch로 데이터 가져오기</a>
-                </Link>
             </Layout>
             <style jsx>{`
             {
