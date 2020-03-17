@@ -1,4 +1,6 @@
-import Link from 'next/link'
+// pages/more.js
+
+import Link from 'next/Link'
 import {useRouter} from 'next/router'
 import Layout from '../components/layout'
 
@@ -17,12 +19,11 @@ export default function More() {
                     컴포넌트별로 적용할 수 있어 편리하네요.
                 </h3>
                 <Link href="/fetch">
-                    데이터 가져오기 (제작중)
+                    <a>fetch로 데이터 가져오기</a>
                 </Link>
             </Layout>
             <style jsx>{`
             {
-                text-align:center;
             }
             `}</style>
         </div>
