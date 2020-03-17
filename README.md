@@ -2,14 +2,17 @@
 React using next.js
 
 ## Install node.js in your PC
-download and install node.js  
-in https://nodejs.org/  
+download and install node.js on https://nodejs.org/  
 
-## npm install react and next
+## npm install node-modules
 ```console
 git clone https://github...  
 cd next-react  
-npm install react react-dom next  
+npm install react react-dom next isomorphic-unfetch mysql
+```
+
+## run node server
+```console
 npm run dev  
 ```
 
