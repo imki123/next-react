@@ -24,6 +24,8 @@ export default (req, res) => {
     if(!db_error){ //에러가 undefined면
         res.statusCode = 200
         res.setHeader('Content-Type', 'application/json')
+        // res.setHeader("Access-Control-Allow-Origin", "*")
+        // res.setHeader("Access-Control-Allow-Credentials","true")
         res.end(JSON.stringify(db_data)) //res생성
     }else{
         console.log('에러발생: '+db_error)
