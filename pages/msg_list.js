@@ -8,6 +8,7 @@ export default function Fetch(props) {
         <div>
             <Layout>
                 <h1>api 테스트</h1>
+                {props.domain}
                 <ol>
                     {props.data.map(i =>
                         <li key={i.msg_id}>{i.msg_user} {i.msg_content} {i.dttm}</li>)}
@@ -22,11 +23,24 @@ export default function Fetch(props) {
 }
 
 Fetch.getInitialProps = async function (req) {
-    const res = await fetch('http://localhost:3000/api/select_msg');
+    //서버와 클라이언트의 도메인을 가져오기
+    let domain
+    if (req.req) {
+        // Server side rendering
+        const idx = req.req.headers.referer.indexOf(':')
+        const protocol = req.req.headers.referer.substr(0,idx)
+        const host = req.req.headers.host
+        domain = protocol + '://' + host
+    } else {
+        // Client side rendering
+        domain = window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port : '')
+    }
+    const res = await fetch(domain+'/api/select_msg');
     const data = await res.json();
     console.log(`data fetched. ${JSON.stringify(data)}`);
 
     return {
-        data: data
+        data: data,
+        domain: domain
     };
 };
