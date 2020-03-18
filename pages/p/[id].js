@@ -1,7 +1,7 @@
 // pages/p/[id].js
 
 import {useRouter} from 'next/router'
-import Link from 'next/Link'
+import Link from 'next/link'
 import React, { useState } from 'react'
 import Layout from '../../components/layout'
 

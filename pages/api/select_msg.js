@@ -1,6 +1,6 @@
 // pages/api/select_msg.js
 var mysql      = require('mysql');
-var dbconfig   = require('./mysql.js');
+var dbconfig   = require('../../lib/mysql.js');
 var connection = mysql.createConnection(dbconfig);
 
 var db_data
