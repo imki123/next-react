@@ -1,6 +1,6 @@
 // pages/index.js
 
-import Link from 'next/Link'
+import Link from 'next/link'
 import Layout from '../components/layout'
 import DynamicLink from '../components/dynamicLink'
 

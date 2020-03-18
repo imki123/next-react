@@ -21,7 +21,7 @@ export default function Fetch(props) {
     );
 }
 
-Fetch.getInitialProps = async function () {
+Fetch.getInitialProps = async function (req) {
     const res = await fetch('http://localhost:3000/api/select_msg');
     const data = await res.json();
     console.log(`data fetched. ${JSON.stringify(data)}`);
