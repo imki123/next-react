@@ -3,37 +3,25 @@
 import Link from 'next/link'
 import Layout from '../components/layout'
 import fetch from 'isomorphic-unfetch'
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 export default function Fetch(props) {
+    const [records, setRecords] = useState([])
+    useEffect(() => {
+        fetch('/api/user')
+            .then(res => res.json())
+            .then(json => {
+                setRecords(json)
+                console.log('records:', json)
+            })
+    }, [])
     return (
         <div>
             <Layout>
-                <h1>Batman TV Shows</h1>
-                <ol>
-                    {props.shows.map(show =>
-                        <li key={show.id}>
-                            <Link href={`/p2/[batmans]?title=${show.name}`}
-                                as={`/p2/${show.name}`}>
-                                <a>{show.name}</a>
-                            </Link>
-                        </li>)}
-                </ol>
+                <h1>fetch-user</h1>
+                {JSON.stringify(records)}
             </Layout>
-            <style jsx>{`
-            {
-            }
-            `}</style>
         </div>
     );
 }
-
-Fetch.getInitialProps = async function () {
-    const res = await fetch('https://api.tvmaze.com/search/shows?q=batman');
-    const data = await res.json();
-
-    console.log(`Show data fetched. Count: ${data.length}`);
-
-    return {
-        shows: data.map(entry => entry.show)
-    };
-};

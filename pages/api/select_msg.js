@@ -1,33 +1,25 @@
 // pages/api/select_msg.js
+//mysql 연결
 var mysql      = require('mysql');
 var dbconfig   = require('../../lib/mysql.js');
 var connection = mysql.createConnection(dbconfig);
 
-var db_data
-var db_error
-var qr = "SELECT *, date_format(msg_wrt_dttm,'%Y-%m-%d %H:%i:%s') dttm "
-qr += "FROM msg "
+//레코드를 담을 변수
+var records
+
+//쿼리전송
+var qr = "SELECT *, date_format(msg_wrt_dttm,'%Y-%m-%d %H:%i:%s') dttm FROM msg "
 connection.query(qr, function (error, results, fields) {
     if (error) {
-        console.log('error:',error);
-        db_error = error
+        records = error
     }else{
-        console.log('result:',results);
-        db_data = results
+        records = results //레코드
     }
 });
-  
 connection.end();
 
 export default (req, res) => {
-    //req를 받아서 res페이지를 만들어줌
-    if(!db_error){ //에러가 undefined면
         res.statusCode = 200
         res.setHeader('Content-Type', 'application/json')
-        // res.setHeader("Access-Control-Allow-Origin", "*")
-        // res.setHeader("Access-Control-Allow-Credentials","true")
-        res.end(JSON.stringify(db_data)) //res생성
-    }else{
-        console.log('에러발생: '+db_error)
-    }
+        res.end(JSON.stringify(records)) //res생성
 }
