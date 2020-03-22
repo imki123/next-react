@@ -17,7 +17,7 @@ export default function Index() {
                 <ol>
                     <li>
                         <Link href="/more?title=more">
-                            <a>more 더보기</a>
+                            <a>more</a>
                         </Link>
                     </li>
                     <li>
@@ -35,7 +35,6 @@ export default function Index() {
                 color: blue;
             }
             .logo{
-                text-align:center
             }
             .logo img{
             }
