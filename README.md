@@ -8,7 +8,7 @@ download and install node.js on https://nodejs.org/
 ```console
 git clone https://github...  
 cd next-react  
-npm install react react-dom next isomorphic-unfetch mysql
+npm install react react-dom next mysql2
 ```
 
 ## run node server
