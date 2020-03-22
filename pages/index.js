@@ -2,12 +2,15 @@
 
 import Link from 'next/link'
 import Layout from '../components/layout'
-import DynamicLink from '../components/dynamicLink'
+import DLink from '../components/dLink'
 
 export default function Index() {
     return (
         <div>
             <Layout>
+                <div className="logo">
+                    <img src="/next.jpg"/>
+                </div>
                 <h1>
                     <span>안녕하세요. next입니다.</span>
                 </h1>
@@ -18,7 +21,7 @@ export default function Index() {
                         </Link>
                     </li>
                     <li>
-                        <DynamicLink id='dynamic-page' title="dynamic-page"/>
+                        <DLink id='dynamic-page' title="dynamic-page"/>
                     </li>
                     <li>
                         <Link href="/msg_list">
@@ -30,6 +33,11 @@ export default function Index() {
             <style jsx>{`
             a{
                 color: blue;
+            }
+            .logo{
+                text-align:center
+            }
+            .logo img{
             }
             `}</style>
         </div>

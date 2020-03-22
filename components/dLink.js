@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-export default function DynamicLink(props){
+export default function DLink(props){
     return (
         <span>
             <Link href={`/p/[id]?title=${props.title}`} as={`/p/${props.id}`}>
