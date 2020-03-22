@@ -21,8 +21,7 @@
   },
   "homepage": "https://github.com/Imki123/next-react#readme",
   "dependencies": {
-    "isomorphic-unfetch": "^3.0.0",
-    "mysql": "^2.18.1",
+    "mysql2": "^2.1.0",
     "next": "^9.3.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0"
