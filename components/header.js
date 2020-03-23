@@ -12,11 +12,11 @@ const Header = () =>{
                     <td style={{textAlign:"left"}}>
                         <span onClick={handleBack}>뒤로</span>
                     </td>
-                    <td style={{textAlign:"right"}}>
+                    {/* <td style={{textAlign:"right"}}>
                         <Link href="/">
                             <span>홈으로</span>
                         </Link>
-                    </td>
+                    </td> */}
                 </tr>
                 </tbody>
             </table>

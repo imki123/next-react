@@ -1,7 +1,6 @@
 // pages/index.js
-
-import Link from 'next/link'
 import Layout from '../components/layout'
+import Link from 'next/link'
 import DLink from '../components/dLink'
 
 export default function Index() {
@@ -26,6 +25,16 @@ export default function Index() {
                     <li>
                         <Link href="/msg_list">
                             <a>msg_list</a>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/myKakao">
+                            <a>myKakao</a>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/test">
+                            <a>test</a>
                         </Link>
                     </li>
                 </ol>

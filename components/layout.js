@@ -1,5 +1,4 @@
 // components/layout.js
-
 import Header from './header'
 const Layout = props => (
     <div>
