@@ -14,8 +14,10 @@ export default function KakaoNav() {
             </ul>
         <style jsx>{`
         .nav_container{
+            height:100%;
             text-align:center;
             padding:10px 0px;
+            background-color:#ececec;
         }
         .nav_button{
             padding:10px 10px 10px 10px;
@@ -27,7 +29,7 @@ export default function KakaoNav() {
         .up_nav{
         }
         .down_nav{
-            padding-top:190px;
+            padding-top:230px;
         }
         `}</style>
         </div>
