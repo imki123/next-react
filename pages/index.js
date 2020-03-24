@@ -39,7 +39,7 @@ export default function Index() {
                     </li>
                 </ol>
             </Layout>
-            <style jsx>{`
+            <style jsx global>{`
             a{
                 color: blue;
             }
@@ -48,6 +48,7 @@ export default function Index() {
             .logo img{
             }
             `}</style>
+            
         </div>
     );
 }

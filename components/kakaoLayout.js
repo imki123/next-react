@@ -12,42 +12,50 @@ export default class KakaoLayout extends React.Component {
         if (cont.offsetHeight < 500) {
             cont.style.height = '500px'
         } else {
-            cont.style.height = 'auto'
+            cont.style.height = cont.offsetHeight+'px'
         }
     }
     render() {
         return (
             <div className="container" ref={this.container}>
+                {/* 왼쪽에는 네비게이션 */}
                 <div className="nav">
                     <KakaoNav />
                 </div>
+                {/* 오른쪽에는 표시하고싶은 컨텐츠. 메인 */}
                 <div className="main">
                     {this.props.children}
                 </div>
-                <style jsx>{`
-                * {
-                    -webkit-box-sizing: border-box;
-                       -moz-box-sizing: border-box;
-                            box-sizing: border-box;
-                }
-                .container{
-                    width:450px;
-                }
-                .nav{
-                    display:inline-block;
-                    width:100px;
-                    height:100%;
-                    border: 1px solid #DDD;
-                    padding: 20px;
-                    margin: 0;
-                }
-                .main{
-                    display:inline-block;
-                    width:350px;
-                    height:100%;
-                    border: 1px solid #DDD;
-                    padding: 20px;
-                }
+                <style jsx global>{`
+                    * {
+                        -webkit-box-sizing: border-box;
+                           -moz-box-sizing: border-box;
+                                box-sizing: border-box;
+                    }
+                    ul{
+                        list-style-type: none;
+                        margin-block-start: 0em;
+                        margin-block-end: 0em;
+                        padding-inline-start: 0px;
+                    }
+                    .container{
+                        width:450px;
+                    }
+                    .nav{
+                        display:inline-block;
+                        width:100px;
+                        height:100%;
+                        border: 1px solid #DDD;
+                        margin: 0;
+                        vertical-align:top;
+                    }
+                    .main{
+                        display:inline-block;
+                        width:350px;
+                        height:100%;
+                        border: 1px solid #DDD;
+                        vertical-align:top;
+                    }
                 `}</style>
             </div>
         )
