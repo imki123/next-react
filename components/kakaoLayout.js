@@ -26,18 +26,7 @@ export default class KakaoLayout extends React.Component {
                 <div className="main">
                     {this.props.children}
                 </div>
-                <style jsx global>{`
-                    * {
-                        -webkit-box-sizing: border-box;
-                           -moz-box-sizing: border-box;
-                                box-sizing: border-box;
-                    }
-                    ul{
-                        list-style-type: none;
-                        margin-block-start: 0em;
-                        margin-block-end: 0em;
-                        padding-inline-start: 0px;
-                    }
+                <style jsx>{`
                     .container{
                         width:450px;
                     }

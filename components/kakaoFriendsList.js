@@ -1,9 +1,9 @@
 export default function kakaoFriendsList() {
     const modalRef = React.createRef();
-    const openProfile = () =>{
+    const openModal = () =>{
         const modal = modalRef.current
         modal.style.display='block'
-        //modal.childNodes[0]
+        console.log('openModal')
     }
     const closeModal = ()=>{
         const modal = modalRef.current
@@ -13,7 +13,7 @@ export default function kakaoFriendsList() {
     const zoomProfile=e=>{
         e.stopPropagation()
         const modal = modalRef.current
-        console.log(modal.childNodes[0].classList)
+        //console.log(modal.childNodes[0].classList)
         if(modal.childNodes[0].classList.contains('zoom')){
             modal.childNodes[0].classList.remove('zoom')
         }else{
@@ -26,7 +26,7 @@ export default function kakaoFriendsList() {
             <ul className="fl_container">
                 <li className="fl_not fl_title">친구</li>
                 <li className="fl_not fl_subtitle">이름검색</li>
-                <li className="fl" onClick={openProfile}>
+                <li className="fl" onClick={openModal}>
                     <img className="profile" src="/profile.jpg"/>
                     <span className="profile_name">나의 프로필</span></li>
                 <li className="fl_not fl_subtitle">생일인 친구</li>
@@ -81,8 +81,8 @@ export default function kakaoFriendsList() {
         .modal{
             display:none;
             position:absolute;
-            top:8px;
-            left:8px;
+            top:0px;
+            left:0px;
             width:450px;
             height:537px;
             background-color:rgba(0,0,0,0.7);
